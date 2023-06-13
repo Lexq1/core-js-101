@@ -18,7 +18,7 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-const concatenateStrings = (a,b) => a + b;
+const concatenateStrings = (a, b) => a + b;
 
 
 /**
@@ -32,7 +32,7 @@ const concatenateStrings = (a,b) => a + b;
  *   'b'     => 1
  *   ''      => 0
  */
-const getStringLength = str => str.length;
+const getStringLength = (str) => str.length;
 
 /**
  * Returns the result of string template and given parameters firstName and lastName.
@@ -47,7 +47,7 @@ const getStringLength = str => str.length;
  *   'John','Doe'      => 'Hello, John Doe!'
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
-const getStringFromTemplate = (firstName, lastName) => `${firstName}, ${lastName}`;
+const getStringFromTemplate = (firstName, lastName) => `Hello, ${firstName} ${lastName}!`;
 
 /**
  * Extracts a name from template string 'Hello, First_Name Last_Name!'.
@@ -59,7 +59,7 @@ const getStringFromTemplate = (firstName, lastName) => `${firstName}, ${lastName
  *   'Hello, John Doe!' => 'John Doe'
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
-const extractNameFromTemplate = str => str.split(',')[1];
+const extractNameFromTemplate = (str) => str.split(',')[1].split('!')[0].trim();
 
 
 /**
@@ -72,7 +72,7 @@ const extractNameFromTemplate = str => str.split(',')[1];
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-const getFirstChar = str => str[0];
+const getFirstChar = (str) => str[0];
 
 /**
  * Removes a leading and trailing whitespace characters from string.
@@ -85,7 +85,7 @@ const getFirstChar = str => str[0];
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-const removeLeadingAndTrailingWhitespaces = str => str.trim();
+const removeLeadingAndTrailingWhitespaces = (str) => str.trim();
 
 /**
  * Returns a string that repeated the specified number of times.
@@ -98,7 +98,7 @@ const removeLeadingAndTrailingWhitespaces = str => str.trim();
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-const repeatString = (str,i) => str.repeat(i);
+const repeatString = (str, i) => str.repeat(i);
 
 /**
  * Remove the first occurrence of string inside another string
@@ -112,7 +112,7 @@ const repeatString = (str,i) => str.repeat(i);
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-const removeFirstOccurrences = (str, subStr) => str.replace(subStr,'');
+const removeFirstOccurrences = (str, subStr) => str.replace(subStr, '');
 
 /**
  * Remove the first and last angle brackets from tag string
@@ -125,7 +125,7 @@ const removeFirstOccurrences = (str, subStr) => str.replace(subStr,'');
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-const unbracketTag = str => str.replace(/[<>]/g,'');
+const unbracketTag = (str) => str.replace(/[<>]/g, '');
 
 
 /**
@@ -138,7 +138,7 @@ const unbracketTag = str => str.replace(/[<>]/g,'');
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-const convertToUpperCase = str => str.toUpperCase();
+const convertToUpperCase = (str) => str.toUpperCase();
 
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
@@ -155,7 +155,7 @@ const convertToUpperCase = str => str.toUpperCase();
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-const extractEmails = str => str.split(';');
+const extractEmails = (str) => str.split(';');
 
 /**
  * Returns the string representation of rectangle with specified width and height
@@ -208,7 +208,7 @@ function getRectangleString(width, height) {
 function encodeToRot13(str) {
   const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const res = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-  const encode = str.split('').map(el => {
+  const encode = str.split('').map((el) => {
     let newEl = el;
 
     if (input.includes(el)) {
@@ -233,7 +233,7 @@ function encodeToRot13(str) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-const isString = str => str instanceof String || typeof str === 'string';
+const isString = (str) => str instanceof String || typeof str === 'string';
 
 
 /**
@@ -260,10 +260,10 @@ const isString = str => str instanceof String || typeof str === 'string';
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-let arr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣', 'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
-'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥','A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+const arr = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣', 'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+  'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥', 'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
 
-const getCardId = str => arr.indexOf(str);
+const getCardId = (str) => arr.indexOf(str);
 
 
 module.exports = {
